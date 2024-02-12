@@ -16,13 +16,15 @@ typedef enum{
 
 
 CommAppError_t  CommApp_enuSerialDataCheck();
-CommAppError_t CommApp_enuDataSend(u8 Copy_u8DataSend);
+CommAppError_t CommApp_enuCANSend(u8 Copy_u8DataSend);
 //can interfaces
 void CAN_FilterConfig(void);
 u16 Std_id_High(u16 local_u16Std_Id);
 void CAN_TX(void);
 
-
+//********************************************************
+CommAppError_t CommApp_enuCANDataCheck() ;
+//********************************************************
 
 // Uart data interfaces
 void CommApp_voidClearUartVar(void);

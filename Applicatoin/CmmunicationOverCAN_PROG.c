@@ -4,7 +4,7 @@
 /* Version        : 1.0                                                      */
 /*sw              : CmmunicationOverCAN                                      */
 /*****************************************************************************/
-
+#include <stdio.h>
 
 #include "STD_TYPES.h"
 
@@ -61,12 +61,26 @@ void CommApp_voidRunnable(void) {
 
 	if (CommApp_enuSerialDataCheck() == COM_TRUE) {
 
-		CommApp_enuDataSend(CommApp_voidReadClearUartVar());
+		CommApp_enuCANSend(CommApp_voidReadClearUartVar());
+
+	} else {
+		// do nothing for now
+	}
+	if (CommApp_enuCANDataCheck() == COM_TRUE) {
+		// value for test
+		CommApp_enuSerialSend(15);
 
 	} else {
 		// do nothing for now
 	}
 }
+
+CommAppError_t CommApp_enuCANDataCheck() {
+
+	// void CAN_RX(void) ;
+	return COM_TRUE;
+}
+
 /*****************************************************************************/
 /*void CAN_RX(void) {
  CAN_RxHeaderTypeDef Rx_header;
@@ -95,18 +109,8 @@ void CAN_FilterConfig(void) {
 
 	CAN_voidConfigFilter(&CAN_FilterInit);
 }
-/**************************************************************************************/
 
-CommAppError_t CommApp_enuSerialDataCheck() {
-	CommAppError_t Local_enuErorr = COM_TRUE;
-	if (Global_UartDataRecive == 0) {
-		Local_enuErorr = COM_FALSE;
-	} else {
-		// do nothing
-	}
-	return Local_enuErorr;
-}
-CommAppError_t CommApp_enuDataSend(u8 Copy_u8DataSend) {
+CommAppError_t CommApp_enuCANSend(u8 Copy_u8DataSend) {
 	CommAppError_t Local_enuErorr = COM_TRUE;
 //for testing
 	UART2_u8SendByteBusyw8(Copy_u8DataSend);
@@ -122,6 +126,25 @@ CommAppError_t CommApp_enuDataSend(u8 Copy_u8DataSend) {
 	return Local_enuErorr;
 }
 
+/**************************************************************************************/
+
+CommAppError_t CommApp_enuSerialDataCheck() {
+	CommAppError_t Local_enuErorr = COM_TRUE;
+	if (Global_UartDataRecive == 0) {
+		Local_enuErorr = COM_FALSE;
+	} else {
+		// do nothing
+	}
+	return Local_enuErorr;
+}
+
+CommAppError_t CommApp_enuSerialSend(u8 Copy_u8DataSend) {
+	CommAppError_t Local_enuErorr = COM_TRUE;
+
+	UART1_u8SendByteBusyw8(Copy_u8DataSend);
+	return Local_enuErorr;
+
+}
 void CommApp_voidClearUartVar() {
 	Global_UartDataRecive = 0;
 }
