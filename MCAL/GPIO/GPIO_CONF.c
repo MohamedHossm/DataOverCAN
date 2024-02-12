@@ -21,8 +21,8 @@ const   GPIO_Conf_t  GPIO_Conf_ARR [PINTOTAL] ={
 		{Pin_A8      ,GPIO_u8OUT_PUSH_PULL_2MHZ },
 		{Pin_A9      ,GPIO_u8OUT_AF_PP_10MHZ }, // Tx 1
 		{Pin_A10     ,GPIO_u8INPUT_FLOATING }, // RX 1
-		{Pin_A11     ,GPIO_u8OUT_PUSH_PULL_2MHZ },
-		{Pin_A12     ,GPIO_u8OUT_PUSH_PULL_2MHZ },
+		{Pin_A11     ,GPIO_u8INPUT_FLOATING },//canRX
+		{Pin_A12     ,GPIO_u8OUT_AF_PP_10MHZ },//canTX
 		{Pin_A13     ,GPIO_u8OUT_PUSH_PULL_2MHZ },
 		{Pin_A14     ,GPIO_u8OUT_PUSH_PULL_2MHZ },
 		{Pin_A15     ,GPIO_u8OUT_PUSH_PULL_2MHZ },

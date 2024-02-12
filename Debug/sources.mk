@@ -22,6 +22,7 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Applicatoin \
+MCAL/CAN \
 MCAL/GPIO \
 MCAL/NVIC \
 MCAL/RCC \

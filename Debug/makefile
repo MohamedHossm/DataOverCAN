@@ -17,6 +17,7 @@ RM := rm -rf
 -include MCAL/RCC/subdir.mk
 -include MCAL/NVIC/subdir.mk
 -include MCAL/GPIO/subdir.mk
+-include MCAL/CAN/subdir.mk
 -include Applicatoin/subdir.mk
 -include subdir.mk
 -include objects.mk

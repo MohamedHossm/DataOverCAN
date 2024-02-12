@@ -1,0 +1,15 @@
+CAN_program.c:27:6:CAN_voidInit	4	static
+CAN_program.c:105:6:CAN_voidAddTxMsg	24	static
+CAN_program.c:155:6:CAN_voidStart	4	static
+CAN_program.c:163:6:CAN_voidGetRxMsg	32	static
+CAN_program.c:217:4:CAN_voidRXPending	16	static
+CAN_program.c:231:6:CAN_voidConfigFilter	24	static
+CAN_program.c:310:5:CAN_voidGetErrorCode	4	static
+CAN_program.c:358:6:CAN_voidTX_Interrupt_Handler	16	static
+CAN_program.c:425:6:CAN_voidRX_FIFO0_Interrupt_Handler	24	static
+CAN_program.c:475:6:CAN_voidRX_FIFO1_Interrupt_Handler	24	static
+CAN_program.c:525:6:CAN_voidSCE_Interrupt_Handler	24	static
+CAN_program.c:706:6:USB_HP_CAN1_TX_IRQHandler	8	static
+CAN_program.c:710:6:USB_LP_CAN1_RX0_IRQHandler	8	static
+CAN_program.c:714:6:CAN1_RX1_IRQHandler	8	static
+CAN_program.c:718:6:CAN1_SCE_IRQHandler	8	static

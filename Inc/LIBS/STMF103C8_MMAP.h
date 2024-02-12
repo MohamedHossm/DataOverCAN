@@ -373,5 +373,72 @@ typedef struct {
 
 } FLASH_REG_DEF_t;
 #define FLASH ((FLASH_REG_DEF_t*)FLASH_u32BASE_ADDRESS)
+/*************************************************************/
+/*******************Controller Area Network*******************/
+/*************************************************************/
+/*******************   Register Definition     ***************/
 
+/** Controller Area Network TxMailBox **/
+
+typedef struct
+{
+  volatile u32 TIR;
+  volatile u32 TDTR;
+  volatile u32 TDLR;
+  volatile u32 TDHR;
+
+} CAN_TxMailBox_TypeDef;
+
+/** Controller Area Network FIFOMailBox **/
+
+typedef struct
+{
+  volatile u32 RIR;
+  volatile u32 RDTR;
+  volatile u32 RDLR;
+  volatile u32 RDHR;
+} CAN_FIFOMailBox_TypeDef;
+
+/** Controller Area Network FilterRegister **/
+
+typedef struct
+{
+  volatile u32 FR1;
+  volatile u32 FR2;
+} CAN_FilterRegister_TypeDef;
+
+
+
+typedef struct
+{
+	volatile u32 MCR;
+	volatile u32 MSR;
+	volatile u32 TSR;
+	volatile u32 RF0R;
+	volatile u32 RF1R;
+	volatile u32 IER;
+	volatile u32 ESR;
+	volatile u32 BTR;
+	u32 RESERVED0[88];
+	CAN_TxMailBox_TypeDef TxMailBox[3];
+    CAN_FIFOMailBox_TypeDef FIFOMailBox[2];
+    u32  RESERVED1[12];
+    volatile u32 FMR;
+    volatile u32 FM1R;
+    u32  RESERVED2;
+    volatile u32 FS1R;
+    u32  RESERVED3;
+    volatile u32 FFA1R;
+    u32  RESERVED4;
+    volatile u32 FA1R;
+    u32  RESERVED5[8];
+    CAN_FilterRegister_TypeDef FilterBankRegister[14];
+
+}CAN_t;
+
+/*******************   BASE Address Definition    ****************************/
+#define CAN_BASE_ADDRESS	0x40006400 		//define the boundary address of CAN
+#define CAN			((volatile CAN_t *) CAN_BASE_ADDRESS)
+
+/*****************************************************************************/
 #endif //_STMF103C8_MMAP_H_
