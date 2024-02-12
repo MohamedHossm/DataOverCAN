@@ -4,7 +4,7 @@
 /* Version        : 1.0                                                      */
 /*sw              : CmmunicationOverCAN                                      */
 /*****************************************************************************/
-#include <stdio.h>
+
 
 #include "STD_TYPES.h"
 
